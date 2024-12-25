@@ -1,0 +1,290 @@
+body {
+    display: flex;
+            justify-content: center;
+            align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(75, 55, 5); 
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Removed duplicate #background-video selector */
+
+.navbar {
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0.8);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.landing-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.orbit {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 50%;
+    perspective: 1000px;
+}
+
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    transform-origin: -150px;
+    animation: orbit 15s linear infinite;
+    transition: transform 0.5s ease, top 0.5s ease, left 0.5s ease;
+    margin: 180px; /* Add margin to create gap between icons */
+}
+
+.planet:hover {
+    transform: rotate(360deg);
+    top: calc(50% + 20px);
+    left: calc(50% + 20px);
+}
+
+.planet:nth-child(1) { transform: rotate(calc(90deg * 1)) translateX(170px) translateY(-50px); }
+.planet:nth-child(2) { transform: rotate(calc(90deg * 2)) translateX(170px) translateY(50px); }
+.planet:nth-child(3) { transform: rotate(calc(90deg * 3)) translateX(170px) translateY(-50px); }
+.planet:nth-child(4) { transform: rotate(calc(90deg * 4)) translateX(170px) translateY(50px); }
+
+@keyframes orbit {
+    from { transform: rotate(0deg) translateX(150px); }
+    to { transform: rotate(360deg) translateX(150px); }
+}
+
+button {
+    position: relative;
+    z-index: 1;
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#budget-tracker {
+    position: relative;
+    z-index: 1;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+#budget-form input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#budget-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#budget-summary {
+    margin-top: 20px;
+}
+
+#expense-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#expense-list li {
+    margin: 5px 0;
+}
+.Svideo-background {
+    position: absolute;
+    top: 20px; /* Corrected value */
+    bottom: 25%;
+    left: 25%;
+    width: 50%; /* Adjust the width as needed */
+    height: auto;
+    margin: 0 auto; /* Center the video */
+    z-index: 1;
+    object-fit: cover;
+}
+#aboutButton {
+    position: relative;
+    bottom: 12%; /* Adjust the distance from the bottom as needed */
+    left: 47%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #ff9800; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: background-color 0.3s, transform 0.3s; /* Animation for hover effect */
+}
+
+#aboutButton:hover {
+    background-color: #e68900; /* Darker shade on hover */
+    transform: translateX(-50%) translateY(-5px); /* Slight lift on hover */
+}
+
+
+
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+/*Budget Tracking animation*/
+#budget-tracker {
+    position: relative;
+    z-index: 1;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
+    text-align: center; /* Center the content inside the container */
+}
+
+
+#budget-tracker:hover {
+    transform: translateY(-10px); /* Move the container up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+#budget-form input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Add transition for background color */
+}
+#budget-form button,
+#income-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Animation for hover effect */
+}
+
+#budget-form button:hover,
+#income-form button:hover {
+    background-color: #e68900; /* Darker shade on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+#budget-summary {
+    margin-top: 20px;
+}
+
+#expense-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 400px; /* Set a fixed height */
+    margin: auto;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important; /* Ensure the canvas fits within the container */
+}
+#contact-section {
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+}
+
+#contact-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#contact-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0073b1; /* LinkedIn blue color */
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Animation for hover effect */
+}
+
+.contact-button:hover {
+    background-color: #005582; /* Darker shade on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+.about-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-section p,
+.about-section ul {
+    font-size: 18px;
+    color: white; /* White text color */
+}
+.about-section ul li {
+    margin: 10px 0;
+}
+
+.highlight {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.highlight:hover {
+    background-color: #333; /* Highlight background color on hover */
+    color: #ff9800; /* Highlight text color on hover */
+}
