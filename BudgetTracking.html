@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Track</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- nav bar -->
+    <div class="navbar">
+        <a href="#home" onclick="navigateToIndex()">Home</a>
+        <a href="#services" onclick="navigateToServices()">Services</a>
+        <a href="#about" onclick="navigateToAbout()">About</a>
+        <a href="#contact" onclick="navigateToContact()">Contact</a>
+    </div>
+    <!-- Budget Tracking Section -->
+    <div id="budget-tracker" style="margin-top: 50px;" content="device-width, initial-scale=1.0">
+        <h2>Desi Expense Tracker</h2>
+        <form id="income-form">
+            <input type="number" id="income" placeholder="Income" required>
+            <button type="submit">Set Income</button>
+        </form>
+        <form id="budget-form" style="display: none;">
+            <input list="expense-options" id="expense-name" placeholder="Expense Name" required>
+            <datalist id="expense-options">
+                <option value="Rent">
+                <option value="Credit Card">
+                <option value="Education Loan">
+                <option value="Other Loan">
+                <option value="Dosto ki Udhar">              
+                <option value="Groceries">
+                <option value="Utilities">
+                <option value="Transportation">
+                <option value="Entertainment">
+                <option value="Health">
+                <option value="Chai/Sutta">
+                <option value="Girlfriend/Boyfriend">
+                <option value="Family">
+                <option value="Daru/Chakhna">
+            </datalist>
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+            <button type="submit">Add Expense</button>
+        </form>
+        <div id="budget-summary">
+            <h3>Expense Summary</h3>
+            <ul id="expense-list"></ul>
+            <p>Total Expenses: $<span id="total-amount">0</span></p>
+            <p>Remaining Balance: $<span id="remaining-balance">0</span></p>
+            <p id="expenseMessage" style="color: red; font-weight: bold;"></p> <!-- Message element -->
+        </div>
+        <div class="chart-container">
+            <canvas id="expenseChart"></canvas>
+        </div>
+        <button id="downloadPdfButton">Download PDF</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
